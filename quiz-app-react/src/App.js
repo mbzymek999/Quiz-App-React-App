@@ -7,6 +7,7 @@ import CreateQuestion from "./components/create-question.component";
 import RandomQuestionComponent from "./components/random-question.component";
 import QuestionsComponent from "./components/questions.component";
 import QuestionDetailsComponent from "./components/question-details.component";
+import UpdateQuestionComponent from "./components/update-question.component";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
                       <Route path="/create_question" component={CreateQuestion} />
                       <Route path="/questions" component={QuestionsComponent} />
                       <Route path="/question/:clientId" component={QuestionDetailsComponent} />
+                      <Route path="/update_question/:clientId" component={UpdateQuestionComponent} />
                   </Switch>
               </Container>
           </Router>

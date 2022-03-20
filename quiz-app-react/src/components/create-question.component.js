@@ -54,7 +54,7 @@ function CreateQuestion() {
                             <form onSubmit={createQuestion}>
                                 <Row>
                                     <Col>
-                                        <label className="mb-1">Nazwa zadania</label>
+                                        <label className="mb-1">Tytuł pytania</label>
                                         <input
                                             type="text"
                                             name="title"

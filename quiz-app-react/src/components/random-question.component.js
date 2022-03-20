@@ -43,7 +43,14 @@ export default function RandomQuestionComponent() {
                         </Button>
                         <Collapse in={open}>
                             <div id="example-collapse-text" className="mt-3">
-                                Odpowiedź: {question.description}
+                                Odpowiedź:
+                                <textarea
+                                    style={{height: "300px"}}
+                                    type="text"
+                                    value={question.description}
+                                    name="description"
+                                    className="form-control"
+                                />
                             </div>
                         </Collapse>
                     </Col>

@@ -35,7 +35,14 @@ export default function QuestionDetailsComponent() {
                     <Col>
                         <h2 className="mb-3">Pytanie: <strong>{question.title}</strong></h2>
                         <div id="example-collapse-text" className="mt-3">
-                            Odpowiedź: {question.description}
+                            Odpowiedź:
+                            <textarea
+                                style={{height: "300px"}}
+                                type="text"
+                                value={question.description}
+                                name="description"
+                                className="form-control"
+                            />
                         </div>
                     </Col>
                 </Row>

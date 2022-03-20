@@ -3,7 +3,7 @@ import {Badge, Button, Card, Col, Container, Row, Collapse} from "react-bootstra
 import axios from "axios";
 import globalUrl from "../globalUrl";
 
-export default function QuestionController() {
+export default function RandomQuestionComponent() {
 
     const [question, setQuestion] = useState([]);
     const [open, setOpen] = useState(false);

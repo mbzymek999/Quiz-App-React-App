@@ -4,7 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { history } from './helpers/history';
 import {Navbar, Container, Nav, Button} from "react-bootstrap"
 import CreateQuestion from "./components/create-question.component";
-import QuestionController from "./components/question.component";
+import RandomQuestionComponent from "./components/random-question.component";
+import QuestionsComponent from "./components/questions.component";
+import QuestionDetailsComponent from "./components/question-details.component";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
                           >
                               <Nav.Link>
                                   <li className="nav-item">
-                                      <Link to={"/question"} className="nav-link">
+                                      <Link to={"/question/random"} className="nav-link">
                                           <Button style={{background: "rgba(6,65,96,0.91)"}} size={"lg"} className="btn btn-outline-light buttonNav">Wylosuj pytanie</Button>
                                       </Link>
                                   </li>
@@ -51,8 +53,10 @@ function App() {
               </Navbar>
               <Container className={"mt-5"}>
                   <Switch>
-                      <Route path="/question" component={QuestionController} />
+                      <Route path="/question/random" component={RandomQuestionComponent} />
                       <Route path="/create_question" component={CreateQuestion} />
+                      <Route path="/questions" component={QuestionsComponent} />
+                      <Route path="/question/:clientId" component={QuestionDetailsComponent} />
                   </Switch>
               </Container>
           </Router>

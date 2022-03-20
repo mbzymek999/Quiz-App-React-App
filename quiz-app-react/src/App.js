@@ -2,8 +2,9 @@ import './App.css';
 import {Link, Route, Router, Switch} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { history } from './helpers/history';
-import QuestionController from "./components/question.component";
 import {Navbar, Container, Nav, Button} from "react-bootstrap"
+import CreateQuestion from "./components/create-question.component";
+import QuestionController from "./components/question.component";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
               <Navbar style={{background: "#205aab"}} className="m-0 p-0" expand="sm">
                   <Container fluid>
                       <Navbar.Brand href="/home">
-                          <h3 className="m-0 " style={{color: "ghostwhite"}}><b>Quiz<span style={{color: "gold"}}>App</span></b></h3>
+                          <h2 className="m-0 " style={{color: "ghostwhite"}}><b>Quiz<span style={{color: "gold"}}>App</span></b></h2>
                       </Navbar.Brand>
                       <Navbar.Toggle aria-controls="navbarScroll" />
                       <Navbar.Collapse id="navbarScroll">
@@ -24,7 +25,7 @@ function App() {
                               <Nav.Link>
                                   <li className="nav-item">
                                       <Link to={"/question"} className="nav-link">
-                                          <Button style={{background: "rgba(6,65,96,0.91)"}} className="btn btn-outline-light buttonNav">Wylosuj pytanie</Button>
+                                          <Button style={{background: "rgba(6,65,96,0.91)"}} size={"lg"} className="btn btn-outline-light buttonNav">Wylosuj pytanie</Button>
                                       </Link>
                                   </li>
                               </Nav.Link>
@@ -32,7 +33,7 @@ function App() {
                               <Nav.Link>
                                   <li className="nav-item">
                                       <Link to={"/questions"} className="nav-link">
-                                          <Button style={{background: "rgba(6,65,96,0.91)"}} className="btn btn-outline-light buttonNav">Twoje pytania</Button>
+                                          <Button style={{background: "rgba(6,65,96,0.91)"}} size={"lg"} className="btn btn-outline-light buttonNav">Twoje pytania</Button>
                                       </Link>
                                   </li>
                               </Nav.Link>
@@ -40,7 +41,7 @@ function App() {
                               <Nav.Link>
                                   <li className="nav-item">
                                       <Link to={"/create_question"} className="nav-link">
-                                          <Button style={{background: "rgba(6,65,96,0.91)"}} className="btn btn-outline-light buttonNav">Dodaj pytanie</Button>
+                                          <Button style={{background: "rgba(6,65,96,0.91)"}} size={"lg"} className="btn btn-outline-light buttonNav">Dodaj pytanie</Button>
                                       </Link>
                                   </li>
                               </Nav.Link>
@@ -51,6 +52,7 @@ function App() {
               <Container className={"mt-5"}>
                   <Switch>
                       <Route path="/question" component={QuestionController} />
+                      <Route path="/create_question" component={CreateQuestion} />
                   </Switch>
               </Container>
           </Router>
